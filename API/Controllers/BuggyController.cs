@@ -24,8 +24,10 @@ namespace API.Controllers
         public ActionResult<AppUser> GetNotFound() {
             var thing = _context.Users.Find(-1);
 
-            if(thing == null) return NotFound();
-
+            if(thing == null) {
+                return NotFound();
+            } 
+            
             return Ok(thing);
         }
 
